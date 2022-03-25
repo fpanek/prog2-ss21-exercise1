@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -9,33 +12,94 @@ public class FuelCalculationTest {
     For a mass of 1969, the fuel required is 654.
     For a mass of 100756, the fuel required is 33583.
      */
-    /*
-    void MethodToTest_Example1(){
+    @Test
+    void FuelCalculation_Example1(){
         int inputValue = 12;
         int expectedValue = 2;
-        int actualResult = MethodToTest_Example1().calculateMass(inputValue);
+        int actualResult = FuelCalculation.calculateFuelWithoutMass(inputValue);
         assertEquals(expectedValue,actualResult);
     }
-    void MethodToTest_Example2(){
+
+    @Test
+    void FuelCalculation_Example2(){
         int inputValue = 14;
         int expectedValue = 2;
-        int actualResult = MethodToTest_Example1().calculateMass(inputValue);
+        int actualResult = FuelCalculation.calculateFuelWithoutMass(inputValue);
         assertEquals(expectedValue,actualResult);
     }
-    void MethodToTest_Example3(){
+
+    @Test
+    void FuelCalculation_Example3(){
         int inputValue = 1969;
         int expectedValue = 654;
-        int actualResult = MethodToTest_Example1().calculateMass(inputValue);
+        int actualResult = FuelCalculation.calculateFuelWithoutMass(inputValue);
         assertEquals(expectedValue,actualResult);
     }
 
-    void MethodToTest_Example4(){
+    @Test
+    void FuelCalculation_Example4(){
         int inputValue = 100756;
         int expectedValue = 33583;
-        int actualResult = MethodToTest_Example1().calculateMass(inputValue);
+        int actualResult = FuelCalculation.calculateFuelWithoutMass(inputValue);
         assertEquals(expectedValue,actualResult);
     }
 
-     */
+    //TCs for part 2
+    @Test
+    void FuelCalculation_Example5(){
+        int inputValue = 14;
+        int expectedValue = 2;
+        int actualResult = FuelCalculation.calculateFuelWithMass(inputValue);
+        assertEquals(expectedValue,actualResult);
+    }
+
+    @Test
+    void FuelCalculation_Example6(){
+        int inputValue = 1969;
+        int expectedValue = 966;
+        int actualResult = FuelCalculation.calculateFuelWithMass(inputValue);
+        assertEquals(expectedValue,actualResult);
+    }
+
+    @Test
+    void FuelCalculation_Example7(){
+        int inputValue = 100756;
+        int expectedValue = 50346;
+        int actualResult = FuelCalculation.calculateFuelWithMass(inputValue);
+        assertEquals(expectedValue,actualResult);
+    }
+
+    @Test
+    void goForGoldPart1(){
+        int actual = FuelCalculation.calculateFuelWithoutMass(getFileValues());
+        int expected = 3178783;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void goForGoldPart2(){
+        int actual = FuelCalculation.calculateFuelWithMass(getFileValues());
+        int expected = 4765294;
+        assertEquals(expected, actual);
+    }
+
+    private List<Integer> getFileValues() {
+        readTextFile myFile = readTextFile.getFuelValuesInstance();
+        myFile.setInputfile("src/test/resources/fuelInput");
+        myFile.readFuelValues();
+
+        List<Integer> FuelValues = myFile.getFuelValuesAsArray();
+        return FuelValues;
+    }
+/*
+    @Test
+    void FuelCalculation_Example8(){
+        int inputValue = 109044;
+        int expectedValue = 70520;
+        int actualResult = FuelCalculation.calculateFuelWithMass(inputValue);
+        assertEquals(expectedValue,actualResult);
+    }
+
+ */
 
 }
