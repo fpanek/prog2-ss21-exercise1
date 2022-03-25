@@ -1,3 +1,7 @@
+/*
+GIT Repo: https://github.com/fpanek/prog2-ss21-exercise1
+ */
+
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -77,9 +81,23 @@ public class FuelCalculationTest {
     }
 
     @Test
+    void goForGoldPart1_Scenario2_Null(){
+        int actual = FuelCalculation.calculateFuelWithoutMass(null);
+        int expected = 0;
+        assertEquals(expected, actual);
+    }
+
+    @Test
     void goForGoldPart2(){
         int actual = FuelCalculation.calculateFuelWithMass(getFileValues());
         int expected = 4765294;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void goForGoldPart2_Scenario2_Null(){
+        int actual = FuelCalculation.calculateFuelWithMass(null);
+        int expected = 0;
         assertEquals(expected, actual);
     }
 
@@ -91,15 +109,6 @@ public class FuelCalculationTest {
         List<Integer> FuelValues = myFile.getFuelValuesAsArray();
         return FuelValues;
     }
-/*
-    @Test
-    void FuelCalculation_Example8(){
-        int inputValue = 109044;
-        int expectedValue = 70520;
-        int actualResult = FuelCalculation.calculateFuelWithMass(inputValue);
-        assertEquals(expectedValue,actualResult);
-    }
 
- */
 
 }
