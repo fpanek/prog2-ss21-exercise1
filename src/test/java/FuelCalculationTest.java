@@ -9,6 +9,7 @@ public class FuelCalculationTest {
     For a mass of 1969, the fuel required is 654.
     For a mass of 100756, the fuel required is 33583.
      */
+    /*
     void MethodToTest_Example1(){
         int inputValue = 12;
         int expectedValue = 2;
@@ -34,5 +35,7 @@ public class FuelCalculationTest {
         int actualResult = MethodToTest_Example1().calculateMass(inputValue);
         assertEquals(expectedValue,actualResult);
     }
+
+     */
 
 }

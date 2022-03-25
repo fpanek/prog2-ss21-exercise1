@@ -22,6 +22,10 @@ public class readTextFile {
         return readTextFileObject;
     }
 
+    public List<Integer> getFuelValuesAsArray(){
+         return fuelValues;
+    }
+
     public  void readFuelValues(){
          fuelValues.clear();
          try{
@@ -29,7 +33,7 @@ public class readTextFile {
          String line =  bf.readLine();
          while (line != null) {
             fuelValues.add(Integer.parseInt(line));
-            System.out.println(line);
+            //System.out.println(line);
             line = bf.readLine();
          }
          bf.close();
