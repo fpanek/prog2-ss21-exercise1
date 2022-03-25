@@ -17,7 +17,7 @@ public class FuelCalculationTest {
     For a mass of 100756, the fuel required is 33583.
      */
     @Test
-    void FuelCalculation_Example1(){
+    void FuelCalculation_Part1_Example1(){
         int inputValue = 12;
         int expectedValue = 2;
         int actualResult = FuelCalculation.calculateFuelWithoutMass(inputValue);
@@ -25,7 +25,7 @@ public class FuelCalculationTest {
     }
 
     @Test
-    void FuelCalculation_Example2(){
+    void FuelCalculation_Part1_Example2(){
         int inputValue = 14;
         int expectedValue = 2;
         int actualResult = FuelCalculation.calculateFuelWithoutMass(inputValue);
@@ -33,7 +33,7 @@ public class FuelCalculationTest {
     }
 
     @Test
-    void FuelCalculation_Example3(){
+    void FuelCalculation_Part1_Example3(){
         int inputValue = 1969;
         int expectedValue = 654;
         int actualResult = FuelCalculation.calculateFuelWithoutMass(inputValue);
@@ -41,7 +41,7 @@ public class FuelCalculationTest {
     }
 
     @Test
-    void FuelCalculation_Example4(){
+    void FuelCalculation_Part1_Example4(){
         int inputValue = 100756;
         int expectedValue = 33583;
         int actualResult = FuelCalculation.calculateFuelWithoutMass(inputValue);
@@ -50,7 +50,7 @@ public class FuelCalculationTest {
 
     //TCs for part 2
     @Test
-    void FuelCalculation_Example5(){
+    void FuelCalculation_Part2_Example1(){
         int inputValue = 14;
         int expectedValue = 2;
         int actualResult = FuelCalculation.calculateFuelWithMass(inputValue);
@@ -58,7 +58,7 @@ public class FuelCalculationTest {
     }
 
     @Test
-    void FuelCalculation_Example6(){
+    void FuelCalculation_Part2_Example2(){
         int inputValue = 1969;
         int expectedValue = 966;
         int actualResult = FuelCalculation.calculateFuelWithMass(inputValue);
@@ -66,7 +66,7 @@ public class FuelCalculationTest {
     }
 
     @Test
-    void FuelCalculation_Example7(){
+    void FuelCalculation_Part2_Example3(){
         int inputValue = 100756;
         int expectedValue = 50346;
         int actualResult = FuelCalculation.calculateFuelWithMass(inputValue);
@@ -82,9 +82,7 @@ public class FuelCalculationTest {
 
     @Test
     void goForGoldPart1_Scenario2_Null(){
-        int actual = FuelCalculation.calculateFuelWithoutMass(null);
-        int expected = 0;
-        assertEquals(expected, actual);
+        assertThrows(IllegalArgumentException.class, () -> FuelCalculation.calculateFuelWithoutMass(null));
     }
 
     @Test
@@ -96,9 +94,7 @@ public class FuelCalculationTest {
 
     @Test
     void goForGoldPart2_Scenario2_Null(){
-        int actual = FuelCalculation.calculateFuelWithMass(null);
-        int expected = 0;
-        assertEquals(expected, actual);
+        assertThrows(IllegalArgumentException.class, () -> FuelCalculation.calculateFuelWithMass(null));
     }
 
     private List<Integer> getFileValues() {
@@ -109,6 +105,5 @@ public class FuelCalculationTest {
         List<Integer> FuelValues = myFile.getFuelValuesAsArray();
         return FuelValues;
     }
-
 
 }

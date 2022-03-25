@@ -8,17 +8,14 @@ public class FuelCalculation {
         return calculatedMass;
     }
 
-    public static int calculateFuelWithoutMass(List<Integer> FuelValues) {
+    public static int calculateFuelWithoutMass(List<Integer> fuelValues) {
+        if (fuelValues == null)
+            throw new IllegalArgumentException("Paramter is null");
         int sum = 0;
-        try {
-            for (Integer value : FuelValues) {
-                sum += FuelCalculation.calculateFuelWithoutMass(value);
-            }
-            return sum;
-        }catch (NullPointerException e){
-            System.out.println("Array list is empty");
-            return 0;
+        for (Integer value : fuelValues) {
+            sum += FuelCalculation.calculateFuelWithoutMass(value);
         }
+        return sum;
     }
 
     public static int calculateFuelWithMass(int inputMass) {
@@ -33,17 +30,15 @@ public class FuelCalculation {
         return calculatedFuel;
     }
 
-    public static int calculateFuelWithMass(List<Integer> FuelValues) {
+    public static int calculateFuelWithMass(List<Integer> fuelValues) {
+        if (fuelValues == null)
+            throw new IllegalArgumentException("Paramter is null");
         int sum = 0;
-        try {
-            for (Integer value : FuelValues) {
-                sum += FuelCalculation.calculateFuelWithMass(value);
-            }
-            return sum;
-        }catch (NullPointerException e){
-            System.out.println("Array list is empty");
-            return 0;
+        for (Integer value : fuelValues) {
+            sum += FuelCalculation.calculateFuelWithMass(value);
         }
+        return sum;
+
     }
 
 }
