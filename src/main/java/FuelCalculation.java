@@ -5,5 +5,4 @@ public class FuelCalculation {
         myFile.setInputfile("src/test/resources/fuelInput");
         myFile.readFuelValues();
     }
-
 }
